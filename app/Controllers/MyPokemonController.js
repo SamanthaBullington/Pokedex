@@ -27,9 +27,9 @@ export default class MyPokemonController {
     }
   }
 
-  async addPokemon() {
+  async addPokemon(id) {
     try {
-      await myPokemonService.addPokemon()
+      await myPokemonService.addPokemon(id)
     } catch (error) {
       console.error("something went wrong in adding that pokemon")
     }
@@ -39,7 +39,7 @@ export default class MyPokemonController {
     try {
       myPokemonService.setPokemon(id)
     } catch (error) {
-      console.error('invalid  pokemon id')
+      console.error('invalid pokemon id')
     }
   }
 

@@ -31,10 +31,10 @@ export default class Pokemon {
     const exists = ProxyState.myPokemon.find(p => p.name === ProxyState.currentPokemon.name)
     if (this.name) {
       return `
-          <button type="button" class="btn btn-success" ${exists ? 'disabled' : ''} onclick="app.myPokemonController.addPokemon()">Catch Pokemon!</button>`
+          <button type="button" class="btn btn-success" ${exists ? 'disabled' : ''} onclick="app.myPokemonController.addPokemon(${this.id})">Catch Pokemon!</button>`
     }
     return `
-      <button type="button" class="btn btn-danger" onclick="app.myPokemonController.removePokemon()">Release Pokemon</button>
+      <button type="button" class="btn btn-danger" onclick="app.myPokemonController.removePokemon(${this.id})">Release Pokemon</button>
     `
   }
 
